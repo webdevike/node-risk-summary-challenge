@@ -1,0 +1,14 @@
+[
+  {"event_id":"e1","customer_id":"c1","event_ts":"2026-03-01T10:00:00Z","event_type":"login_fail","risk_score":90},
+  {"event_id":"e1","customer_id":"c1","event_ts":"2026-03-01T10:05:00Z","event_type":"login_fail","risk_score":85},
+  {"event_id":"e2","customer_id":"c2","event_ts":"2026-03-01T11:00:00Z","event_type":"login_success","risk_score":20},
+  {"event_id":"e3","customer_id":"c3","event_ts":"2026-03-01T11:30:00Z","event_type":"password_reset","risk_score":null},
+  {"event_id":"e4","customer_id":"c2","event_ts":"2026-03-02T08:00:00Z","event_type":"login_fail","risk_score":82},
+  {"event_id":"e5","customer_id":"c4","event_ts":"2026-03-02T09:15:00Z","event_type":"login_fail","risk_score":77},
+  {"event_id":"e6","customer_id":"c1","event_ts":"2026-03-02T09:45:00Z","event_type":"login_success","risk_score":10},
+  {"event_id":"e7","customer_id":"c5","event_ts":"2026-03-02T10:15:00Z","event_type":"login_fail","risk_score":95},
+  {"event_id":"e8","customer_id":"c6","event_ts":"2026-03-03T07:00:00Z","event_type":"login_success","risk_score":null},
+  {"event_id":"e9","customer_id":"c7","event_ts":"2026-03-03T07:30:00Z","event_type":"login_fail","risk_score":88},
+  {"event_id":"e10","customer_id":"c8","event_ts":"2026-03-03T08:00:00Z","event_type":"password_reset","risk_score":81},
+  {"event_id":"e11","customer_id":"c9","event_ts":"2026-03-03T08:05:00Z","event_type":"login_fail","risk_score":30}
+]
