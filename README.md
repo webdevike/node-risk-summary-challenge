@@ -4,7 +4,7 @@
 Implement a small Node.js endpoint that summarizes event data using core JavaScript (arrays/objects/maps).
 
 ## Timebox
-30 minutes.
+30 minutes total.
 
 ## Setup
 ```bash
@@ -14,28 +14,62 @@ npm start
 
 Server runs at `http://localhost:3000`.
 
-## Core Task (Pass Criteria)
-Implement `buildRiskSummary(events)` in `src/utils.js`.
+## Where to code
+- Implement only: `buildRiskSummary(events)` in `src/utils.js`
+- Endpoint is already wired: `GET /risk-summary` in `src/server.js`
 
+---
+
+## Checkpoints (clear expectations)
+
+### Checkpoint 1 (0–10 min)
 Return one row per UTC date (`YYYY-MM-DD`) with:
 - `event_date`
 - `total_events`
-- `failed_logins` (`event_type === "login_fail"`)
 
-Then sort output by `event_date` ascending.
-
-## Optional Bonus (if time)
+### Checkpoint 2 (10–20 min) **Pass Criteria**
 Add:
-- `high_risk_events` where `risk_score >= 80` (treat `null` as `0`)
+- `failed_logins` where `event_type === "login_fail"`
 
-## Endpoint
-`GET /risk-summary` is already wired in `src/server.js`.
+Also:
+- Sort by `event_date` ascending
+
+### Checkpoint 3 (20–30 min) **Bonus**
+Add:
+- `high_risk_events` where `risk_score >= 80`
+- Treat `risk_score: null` as `0`
+
+---
+
+## Output shape
+After Checkpoint 2:
+```json
+[
+  {
+    "event_date": "YYYY-MM-DD",
+    "total_events": 0,
+    "failed_logins": 0
+  }
+]
+```
+
+After Checkpoint 3 (bonus):
+```json
+[
+  {
+    "event_date": "YYYY-MM-DD",
+    "total_events": 0,
+    "failed_logins": 0,
+    "high_risk_events": 0
+  }
+]
+```
 
 ## Data
 Input file: `events.json`
 
 ## Validation
-Run:
+Run anytime during the exercise:
 ```bash
 curl http://localhost:3000/risk-summary
 ```
@@ -44,9 +78,9 @@ curl http://localhost:3000/risk-summary
 - Use plain JavaScript (Node 18+)
 - No database needed
 - Keep code readable and simple
-- Focus on core data manipulation correctness
+- Focus on correctness of grouping/count logic
 
 ## What we evaluate
 - JavaScript fundamentals (loops/arrays/maps/objects)
-- Correct grouping/count logic
+- Correctness at each checkpoint
 - Clean, understandable code
