@@ -8,38 +8,40 @@ function loadEvents() {
 }
 
 /**
- * Not part of this version of the challenge.
- * Kept for compatibility with older interviewer notes.
+ * START HERE 👇
  *
- * @param {Array<Object>} events
- * @returns {Array<Object>}
- */
-function dedupeLatestByEventId(events) {
-  return events;
-}
-
-/**
- * Core task (basic JavaScript data manipulation):
+ * Build and return a daily summary from the events array.
  *
- * 1) Group events by UTC date (YYYY-MM-DD)
- * 2) Return one row per day with:
- *    - event_date
- *    - total_events
- *    - failed_logins (event_type === 'login_fail')
- * 3) Sort by event_date ascending
+ * Pass criteria (Checkpoint 1 + 2):
+ * - Group by UTC date (YYYY-MM-DD) from event_ts
+ * - Return one row per date with:
+ *   - event_date
+ *   - total_events
+ *   - failed_logins (event_type === 'login_fail')
+ * - Sort rows by event_date ascending
  *
- * Optional bonus:
- * - Add high_risk_events where risk_score >= 80 (treat null as 0)
+ * Bonus (Checkpoint 3):
+ * - Add high_risk_events where risk_score >= 80
+ * - Treat risk_score: null as 0
  *
  * @param {Array<Object>} events
  * @returns {Array<Object>}
  */
 function buildRiskSummary(events) {
+  // 1) Create a map/object keyed by date.
+
+  // 2) Loop through events and increment counts per day.
+
+  // 3) Convert grouped results to an array.
+
+  // 4) Sort by event_date ascending.
+
+  // 5) Return the final array.
+
   throw new Error('Not implemented: buildRiskSummary');
 }
 
 module.exports = {
   loadEvents,
-  dedupeLatestByEventId,
   buildRiskSummary,
 };

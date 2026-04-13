@@ -16,6 +16,7 @@ Server runs at `http://localhost:3000`.
 
 ## Where to code
 - Implement only: `buildRiskSummary(events)` in `src/utils.js`
+- Look for the **`START HERE 👇`** section in that file
 - Endpoint is already wired: `GET /risk-summary` in `src/server.js`
 
 ---
