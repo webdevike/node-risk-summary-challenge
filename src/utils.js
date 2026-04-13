@@ -8,17 +8,25 @@ function loadEvents() {
 }
 
 /**
- * TODO: Implement deduplication by event_id, keeping latest event_ts.
+ * Checkpoint 4 (stretch): deduplicate by event_id, keeping latest event_ts.
+ *
+ * Starter behavior returns events unchanged so earlier checkpoints can run.
+ * Replace with real dedupe logic if you reach Checkpoint 4.
+ *
  * @param {Array<Object>} events
  * @returns {Array<Object>}
  */
 function dedupeLatestByEventId(events) {
-  throw new Error('Not implemented: dedupeLatestByEventId');
+  return events;
 }
 
 /**
- * TODO: Implement daily summary and return top 3 by high_risk_rate (desc).
- * high_risk_rate should be rounded to 4 decimals.
+ * Implement this incrementally using checkpoints:
+ *
+ * Checkpoint 1: group by event_date (UTC YYYY-MM-DD) and compute total_events.
+ * Checkpoint 2: add failed_logins and high_risk_events (null risk_score => 0).
+ * Checkpoint 3: add high_risk_rate rounded to 4 decimals.
+ * Checkpoint 4 (stretch): sort by high_risk_rate desc, tie-break event_date asc, top 3.
  *
  * Output shape:
  * [
