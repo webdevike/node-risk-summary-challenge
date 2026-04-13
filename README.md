@@ -1,7 +1,7 @@
-# Node.js Coding Challenge — Risk Summary API (30 minutes)
+# Node.js Coding Challenge — Basic Data Manipulation (30 minutes)
 
 ## Goal
-Implement a small Node.js API endpoint that transforms event data into daily risk metrics.
+Implement a small Node.js endpoint that summarizes event data using core JavaScript (arrays/objects/maps).
 
 ## Timebox
 30 minutes.
@@ -14,30 +14,19 @@ npm start
 
 Server runs at `http://localhost:3000`.
 
-## Live Checkpoints (incremental)
-Work in `src/utils.js` and progress through checkpoints.
+## Core Task (Pass Criteria)
+Implement `buildRiskSummary(events)` in `src/utils.js`.
 
-### Checkpoint 1 (core)
-Implement `buildRiskSummary(events)` to return one row per UTC date (`YYYY-MM-DD`) with:
+Return one row per UTC date (`YYYY-MM-DD`) with:
 - `event_date`
 - `total_events`
-
-### Checkpoint 2
-Add:
 - `failed_logins` (`event_type === "login_fail"`)
-- `high_risk_events` (`risk_score >= 80`, with `null` treated as `0`)
 
-### Checkpoint 3
+Then sort output by `event_date` ascending.
+
+## Optional Bonus (if time)
 Add:
-- `high_risk_rate = high_risk_events / total_events` rounded to 4 decimals
-
-### Checkpoint 4 (stretch)
-- Sort by `high_risk_rate` descending
-- Tie-break by `event_date` ascending
-- Return top 3 rows
-- (Optional stretch) Implement `dedupeLatestByEventId(events)` by `event_id` keeping latest `event_ts`
-
-> Note: `dedupeLatestByEventId` currently returns input unchanged so early checkpoints can run.
+- `high_risk_events` where `risk_score >= 80` (treat `null` as `0`)
 
 ## Endpoint
 `GET /risk-summary` is already wired in `src/server.js`.
@@ -46,7 +35,7 @@ Add:
 Input file: `events.json`
 
 ## Validation
-After each checkpoint, run:
+Run:
 ```bash
 curl http://localhost:3000/risk-summary
 ```
@@ -54,11 +43,10 @@ curl http://localhost:3000/risk-summary
 ## Notes
 - Use plain JavaScript (Node 18+)
 - No database needed
-- Keep code readable and modular
-- Prioritize correctness and clear reasoning over perfect edge-case handling
+- Keep code readable and simple
+- Focus on core data manipulation correctness
 
 ## What we evaluate
-- JavaScript fundamentals (arrays, maps, objects, sorting)
-- Correctness at each checkpoint
-- Ability to explain approach and tradeoffs
-- Code clarity
+- JavaScript fundamentals (loops/arrays/maps/objects)
+- Correct grouping/count logic
+- Clean, understandable code
